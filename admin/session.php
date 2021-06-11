@@ -16,6 +16,7 @@
 
         // redirect to login page
         pathTo('signin');
+        
     }
 
 ?>

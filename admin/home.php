@@ -1,6 +1,5 @@
 <?php
     require('./session.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -146,7 +145,7 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/faces/face5.jpg" alt="profile"/>
-              <span class="nav-profile-name">Louis Barnett</span>
+              <span class="nav-profile-name"><?php echo $_SESSION["user_email"]; ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -171,85 +170,11 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tables</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/icons/mdi.html">
-              <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../" target="_blank">
-              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Website View</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <?php include('navbar.php');?>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          
+
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between flex-wrap">
@@ -331,7 +256,7 @@
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-currency-usd mr-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Revenue</small>
+                            <small class="mb-1 text-muted">Total Users</small>
                             <h5 class="mr-2 mb-0">$577545</h5>
                           </div>
                         </div>
